@@ -5,13 +5,9 @@
 var time;
 var url = 'http://openapi.gbis.go.kr/ws/rest/busarrivalservice/station?serviceKey=1234567890&stationId=209000034';
 
-var el = document.getElementById('button1');
-if (el) {
-  document.getElementById('button1').addEventListener('click', checkTime);
-}
+
 
 function myCallback(data) {
-console.log(url);
   console.log(data);
   $(data).find('busArrivalList').each(function() {
     var num = $(this).find('routeId').text();
@@ -32,4 +28,10 @@ $(document).ready(function() {
     dataType: "xml",
     success: myCallback
   });
+  var el = document.getElementById('button1');
+  if (el) {
+    document.getElementById('button1').addEventListener('click', checkTime);
+  } else {
+    console.log("button1 == null");
+  }
 });
