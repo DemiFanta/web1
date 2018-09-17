@@ -12,6 +12,7 @@ if (el) {
 
 function myCallback(data) {
   console.log(data);
+  console.log(url);
   $(data).find('busArrivalList').each(function() {
     var num = $(this).find('routeId').text();
     if (num == '234000130') {
